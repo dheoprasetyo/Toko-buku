@@ -26,4 +26,7 @@ Route::resource("users", "UserController");
 Route::get('/categories/trash', 'CategoryController@trash')->name('categories.trash');
 Route::get('/categories/{id}/restore', 'CategoryController@restore')->name('categories.restore');
 Route::delete('/categories/{id}/delete-permanent','CategoryController@deletePermanent')->name('categories.delete-permanent');
+// route untuk mencari kategori berdasarkan keyword. Route ini akan digunakan oleh select2 nantinya
+Route::get('/ajax/categories/search','CategoryController@ajaxSearch');
 Route::resource('categories', 'CategoryController');
+Route::resource('books', 'BookController');
